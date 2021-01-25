@@ -1,0 +1,7 @@
+{
+  "name": "flashy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
