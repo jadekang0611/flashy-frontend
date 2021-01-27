@@ -9,9 +9,9 @@ import {
   IonIcon,
 } from '@ionic/react';
 import { image } from 'ionicons/icons';
+import ModePage from '../pages/ModeTestPage';
 
 interface ContainerProps {
-  image: string;
   subtitle: string;
   category: string;
 }
@@ -20,7 +20,6 @@ const CategoryCard: React.FC<ContainerProps> = ({ subtitle, category }) => {
   return (
     <div className="container">
       <IonCard>
-        {/* <img src={image} alt={category} /> */}
         <IonCardHeader>
           <IonCardSubtitle>{subtitle}</IonCardSubtitle>
           <IonCardTitle>{category}</IonCardTitle>

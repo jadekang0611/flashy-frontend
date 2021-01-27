@@ -8,10 +8,13 @@ import {
   IonToolbar,
   IonRow,
   IonCol,
+  IonRouterOutlet,
 } from '@ionic/react';
+import { Link } from 'react-router-dom';
 
 import './Tab1.css';
 import CategoryCard from '../components/CategoryCard';
+import ModePage from './ModeTestPage';
 
 const data = [
   { image: 'bulb', subtitle: '20 Questions', category: 'Principles' },
@@ -26,7 +29,7 @@ const data = [
   { image: 'bulb', subtitle: '40 Questions', category: 'Randomized' },
 ];
 
-const Tab1: React.FC = () => {
+const ModeListPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -46,11 +49,12 @@ const Tab1: React.FC = () => {
             {data.map((item, id) => {
               return (
                 <IonCol size="6">
-                  <CategoryCard
-                    image={item.image}
-                    subtitle={item.subtitle}
-                    category={item.category}
-                  />
+                  <Link to={`/main/category/${item.category}`}>
+                    <CategoryCard
+                      subtitle={item.subtitle}
+                      category={item.category}
+                    />
+                  </Link>
                 </IonCol>
               );
             })}
@@ -61,4 +65,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default ModeListPage;
